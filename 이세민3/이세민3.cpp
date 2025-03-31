@@ -25,7 +25,7 @@ void score2grade(int good)
 int main()
 {
     using namespace std;
-    cout << "02분반 2549092 이세민\n";
+    cout << "02, 2549092, 이세민\n";
 
     int month{}, day{};
     cout << "Enter today's month as a number: ";
