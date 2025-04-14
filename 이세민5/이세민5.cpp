@@ -14,8 +14,9 @@ void showScoreGrade(const int& score = 100, const char& grade = 'A');//기본값
 int main()
 {
 	std::cout << "02, 2549092, 이세민\n";
-	int score{inputScore()}
+	int score{};
 	std::cout << &score << std::endl;
+	inputScore(score);//주소가 같은 이유: 같은 값을 참조(pass-by-reference)로 전달해 주기 때문
 
     return 0;
 }
