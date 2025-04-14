@@ -17,7 +17,15 @@ int main()
 	int score{};
 	std::cout << &score << std::endl;
 	inputScore(score);//주소가 같은 이유: 같은 값을 참조(pass-by-reference)로 전달해 주기 때문
-
+	if (!isValid(score))//주소가 다른 이유: 값의 복사본을 값(pass-by-value)으로 전달해 주기 때문
+	{
+		std::cout << score << " is NOT valid! EXIT!!\n";
+		std::exit(-1);
+	}
+	char grade{};
+	score2grade(score, grade);
+	showScoreGrade(score, grade);
+	showScoreGrade();//인자를 넣지 않아도 되는 이유: 인자가 없으면 기본값이 할당되기 때문(누락 허용)
     return 0;
 }
 
@@ -40,4 +48,18 @@ bool isValid(int score)
 {
 	std::cout << "pass-by-value: " << &score << std::endl;
 	return score >= 0 && score <= 100;
+}
+
+void score2grade(const int& score, char& grade)
+{
+	if (score >= 90) grade = 'A';
+	else if (score >= 80) grade = 'B';
+	else if (score >= 70) grade = 'C';
+	else if (score >= 60) grade = 'D';
+	else grade = 'F';
+}
+
+void showScoreGrade(const int& score, const char& grade)
+{
+	std::cout << score << ", " << grade << std::endl;
 }
