@@ -13,7 +13,9 @@ void showScoreGrade(const int& score = 100, const char& grade = 'A');//기본값
 
 int main()
 {
-    std::cout << "02, 2549092, 이세민\n";
+	std::cout << "02, 2549092, 이세민\n";
+	int score{inputScore()}
+	std::cout << &score << std::endl;
 
     return 0;
 }
@@ -26,8 +28,16 @@ int inputScore()
 	return score;
 }
 
-void inputScore(int score)
+void inputScore(int& s)
 {
+	std::cout << "pass-by-reference: " << &s << std::endl;
+	std::cout << "Enter score: ";
+	std::cin >> s;
+}
 
+bool isValid(int score)
+{
+	std::cout << "pass-by-value: " << &score << std::endl;
+	return score >= 0 && score <= 100;
 }
 
