@@ -9,6 +9,7 @@ void inputScore(int&);//콘솔창으로 매개변수값을 입력받음
 bool isValid(int score);//매개변수가 0~100이면 true, 그렇지 않으면 false를 리턴하는 함수 선언
 void score2grade(const int&, char&);// int형 매개변수 값 (90이상,80이상,70이상,60이상,그외)에 따라 char형에 ('A','B','C','D','F')값을 할당하는 함수 선언
 //데이터를 보호하고 여전히 참조로 전달하기 위해 const를 사용
+void showScoreGrade(const int& score = 100, const char& grade = 'A');//기본값은 순서대로 100, 'A', 콘솔창으로 매개변수 출력
 
 int main()
 {
