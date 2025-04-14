@@ -40,4 +40,3 @@ bool isValid(int score)
 	std::cout << "pass-by-value: " << &score << std::endl;
 	return score >= 0 && score <= 100;
 }
-
