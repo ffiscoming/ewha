@@ -63,7 +63,7 @@ int main()
     //std::cout << LEE << std::endl;
     //std::cout << PARK << std::endl;
     //std::cout << numOfStudents << std::endl;
-    student a{}, b{}, c{ 5555555, 92, 'F' };
+    student a{}, b{}, c{ 5555555, 101, 'Y' };
 
     inputStudent(a);
     printStudentName(KIM);
