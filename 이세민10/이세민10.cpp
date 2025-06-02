@@ -3,8 +3,6 @@
 
 #include <iostream>
 using intPtr = int*;
-using datePtr = date*;
-
 struct date
 {
     intPtr year{ new int{} };
@@ -12,6 +10,8 @@ struct date
     intPtr day{ new int{} };
     char dayofweek[20]{};
 };
+
+using datePtr = date*;
 void setDate(datePtr d);
 void printDate(const datePtr d);
 //d 변수 오류 고쳐보기
@@ -29,16 +29,20 @@ int main()
     ptr = new int{ 92 };
     std::cout << "new *ptr: " << *ptr << std::endl;
     std::cout << "ptr, &ptr: " << ptr << " " << &ptr << std::endl << "*ptr, &*ptr: " << *ptr << " " << &*ptr << std::endl << std::endl;
-    
+
     intPtr year{ new int{} }, month{ new int{} }, day{ new int{} };
     char dayofweek[20]{};
     setDate(year, month, day, dayofweek);
     printDate(year, month, day, dayofweek);
 
-    date *today{};
+    datePtr today{ new date };
     setDate(today);
     printDate(today);
-    delete ptr, year, month, day, (*today).year, (*today).month, (*today).day;
+    delete ptr;
+    delete year;
+    delete month;
+    delete day;
+    delete today;
     return 0;
 }
 
