@@ -53,26 +53,31 @@ int main()
 	for (int i = 0; i < d1; i++) delete[] m[i];
 	delete[] m;
 
+	//포인터와 구조체
 	//CDAccount account{};
 	//setCDAccount(account);
 	//CDAccount* accountPtr{ &account };
 	//printCDAccount(*accountPtr);
 
+	//포인터와 구조체(new)
 	//CDAccount* accountPtr{ new CDAccount{} };
 	//setCDAccount(*accountPtr);
 	//printArray(*accountPtr);
 	//delete accountPtr;
 
+	//포인터와 구조체 배열(정적 할당)
 	//const int n{ 2 };
 	//CDAccount accountArray[n]{
 	//	{"내꺼", 10000, 5, 6, 10250}, {"니꺼", 10000, 5, 6, 10250}
 	//};
 
+	//포인터와 구조체 배열
 	//const int n{ 2 };
 	//CDAccount accountArray[n]{};
 	//for (int i = 0; i < n; i++) setCDAccount(accountArray[i]);
 	//for (int i = 0; i < n; i++) printCDAccount(accountArray[i]);
 
+	//포인터와 구조체 동적 배열
 	int x{};
 	std::cout << "Enter the number of account: ";
 	std::cin >> x;
